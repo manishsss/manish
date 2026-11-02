@@ -1,0 +1,106 @@
+/* Quiet entrances and tactile interactions, using the existing palette. */
+:root {
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --card-shadow: 0 12px 30px -18px #78283f35, 0 3px 8px -5px #35251f16;
+}
+
+/* Reveal individual blocks rather than moving entire sections. */
+.reveal,
+.reveal.visible { opacity: 1; transform: none; transition: none; }
+.hero .hero-radar { animation: none; }
+.content-card--live,
+.brand-grid--logos > .brand-card,
+#campaigns .campaign-study,
+#network .creator-network-card {
+  transition: transform 280ms var(--ease-out), border-color 240ms ease, box-shadow 280ms ease;
+}
+#root .motion-reveal {
+  opacity: 0;
+  translate: 0 18px;
+  transition: opacity 650ms var(--ease-out), translate 650ms var(--ease-out), transform 280ms var(--ease-out), border-color 240ms ease, box-shadow 280ms ease;
+  transition-delay: var(--reveal-delay, 0ms), var(--reveal-delay, 0ms), 0ms, 0ms, 0ms;
+}
+#root .motion-reveal.is-visible,
+#root .motion-reveal:focus-within { opacity: 1; translate: 0 0; }
+
+.button {
+  transition: background-color 220ms ease, border-color 220ms ease, box-shadow 220ms ease, transform 220ms var(--ease-out);
+}
+.button:active { transform: translateY(0); box-shadow: none; }
+.button svg,
+.text-button svg,
+.campaign-project-link svg,
+.brand-work-list a > svg:last-child,
+.contact-links > a > svg:last-child,
+.footer-top a svg,
+.nav-talk svg,
+.social-link > span,
+.radar-detail a > span { transition: transform 220ms var(--ease-out); }
+.content-image-strip img,
+.brand-identity img,
+#network .creator-network-proof img { transition: transform 450ms var(--ease-out); }
+.content-tabs button { transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease; }
+.contact-links > a { transition: color 220ms ease, background-color 220ms ease; }
+.header-avatar { transition: border-color 220ms ease, box-shadow 220ms ease; }
+.hero .radar-topic:hover { color: var(--primary); }
+.hero .radar-topic:hover .radar-dot { opacity: 1; outline-color: var(--accent-muted); }
+
+.content-card--live:focus-within,
+.brand-grid--logos > .brand-card:focus-within,
+#campaigns .campaign-study:focus-within,
+#network .creator-network-card:focus-within {
+  border-color: var(--accent-muted);
+  box-shadow: var(--card-shadow);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .content-card--live:hover,
+  .brand-grid--logos > .brand-card:hover,
+  #campaigns .campaign-study:hover,
+  #network .creator-network-card:hover {
+    border-color: var(--accent-muted);
+    box-shadow: var(--card-shadow);
+  }
+  .button.primary:hover { box-shadow: 0 5px 14px -6px #78283f80; }
+  .content-tabs button:not(.active):hover { background: #78283f0c; color: var(--primary); }
+  .contact-links > a:hover { background-color: #78283f06; }
+  .header-brand:hover .header-avatar { border-color: var(--accent-muted); box-shadow: 0 0 0 3px #78283f0b; }
+  .campaign-identity:hover h3 { transition: color 220ms ease; }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .content-card--live:hover,
+  .brand-grid--logos > .brand-card:hover { transform: translateY(-4px); }
+  #campaigns .campaign-study:hover,
+  #network .creator-network-card:hover { transform: translateY(-3px); }
+  .content-thumbnail--real.video:hover .content-image-strip img { transform: scale(1.025); }
+  .brand-card:hover .brand-identity img { transform: scale(1.035); }
+  #network .creator-network-proof a:hover img { transform: scale(1.015); }
+  .button:hover svg,
+  .text-button:hover svg,
+  .campaign-project-link:hover svg,
+  .brand-work-list a:hover > svg:last-child,
+  .contact-links > a:hover > svg:last-child,
+  .footer-top a:hover svg,
+  .nav-talk:hover svg,
+  .social-link:hover > span,
+  .radar-detail a:hover > span { transform: translate(2px, -2px); }
+}
+
+@media (hover: none) {
+  .content-card--live:hover,
+  .button.primary:hover { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    transition-delay: 0ms !important;
+  }
+  #root .motion-reveal { opacity: 1; translate: none; }
+  .content-card--live:hover,
+  .button.primary:hover { transform: none; }
+}

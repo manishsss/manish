@@ -1,0 +1,47 @@
+/* Final spacing layer: a compact, consistent rhythm across the portfolio. */
+.hero.container{padding-top:112px;padding-bottom:0}
+.hero h1{margin-bottom:14px}
+.hero .hero-description{margin-top:16px}
+.hero .hero-actions{margin-top:20px}
+main>.section{padding-top:48px;padding-bottom:0}
+main>.proof-section{margin-top:0;padding-top:48px}
+main>#content{padding-top:36px}
+main>.about-section{padding-bottom:0}
+main>.contact-section{padding-block:48px 0}
+#content .section-heading{margin-bottom:20px}
+#content .section-heading p{margin-top:10px}
+#content .content-tabs{margin-bottom:18px}
+#content .content-grid{gap:20px 24px}
+#content .content-text-card{padding:24px}
+#projects .brands-block>h2{margin-bottom:22px}
+#campaigns .campaign-heading,#network .creator-network-heading,.about-section-heading{margin-bottom:22px}
+#campaigns .campaign-heading h2{margin-bottom:10px}
+#campaigns .campaign-study,#network .creator-network-card{padding:32px}
+#campaigns .campaign-results{margin-block:24px}
+#campaigns .campaign-role{padding-top:22px}
+#campaigns .campaign-links{margin-top:22px}
+#about .editorial-tile{padding:28px}
+.contact-panel{padding-block:40px}
+.contact-copy>p{margin-top:20px}
+.contact-actions{margin-top:22px}
+footer.container{margin-top:32px;padding-top:18px;padding-bottom:24px}
+@media(max-width:760px){
+  .hero.container{padding-top:100px}
+  .hero .hero-description{margin-top:16px}
+  .hero .hero-actions{margin-top:20px}
+  main>.section,main>.proof-section{padding-top:32px}
+  main>#content{padding-top:24px}
+  main>.contact-section{padding-block:32px 0}
+  #projects .brands-block>h2,#campaigns .campaign-heading,#network .creator-network-heading,.about-section-heading{margin-bottom:20px}
+  #content .content-grid{gap:18px}
+  #content .content-text-card{padding:22px}
+  #campaigns .campaign-study,#network .creator-network-card{padding:24px}
+  #campaigns .campaign-results{margin-block:20px}
+  #campaigns .campaign-role{padding-top:20px}
+  #about .editorial-tile{padding:24px}
+  .contact-panel{padding-block:32px}
+  .contact-copy>p{margin-top:18px}
+  .contact-actions{margin-top:20px}
+  footer.container{margin-top:24px;padding-top:16px;padding-bottom:20px}
+}
+@media(max-width:540px){#campaigns .campaign-study,#network .creator-network-card{padding:22px}}

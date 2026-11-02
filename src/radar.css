@@ -1,0 +1,52 @@
+/* Topic positions are a composition, not a scale or a set of measured values. */
+.hero .hero-radar { width: 100%; max-width: 440px; min-width: 0; justify-self: end; container: hero-radar / inline-size; animation: radar-reveal 350ms ease-out both; }
+.hero .radar-diagram { position: relative; width: 100%; aspect-ratio: 420 / 310; }
+.hero .radar-art { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.hero .radar-rings { stroke: var(--primary); stroke-width: 1; opacity: .2; }
+.hero .radar-connectors { stroke: var(--primary); stroke-width: 1; opacity: .17; }
+.hero .radar-points { position: absolute; inset: 0; }
+.hero .radar-topic { position: absolute; width: 44px; height: 44px; padding: 0; transform: translate(-50%, -50%); border: 0; border-radius: 50%; background: transparent; color: var(--ink); transition: color 180ms; }
+.hero .radar-dot { position: absolute; top: 50%; left: 50%; width: 8px; height: 8px; transform: translate(-50%, -50%); border-radius: 50%; background: var(--primary); opacity: .65; transition: opacity 180ms, outline-color 180ms; outline: 1px solid transparent; outline-offset: 3px; }
+.hero .radar-label { position: absolute; width: 160px; font-family: var(--font-body); font-size: 14px; font-weight: 400; line-height: 22px; white-space: nowrap; text-align: center; transition: color 180ms; }
+/* Four equal quadrants; matching label boxes and leader lengths scale together. */
+.hero .radar-topic--early .radar-label,
+.hero .radar-topic--content .radar-label { left: calc(-58px + 12.143cqw); }
+.hero .radar-topic--social .radar-label,
+.hero .radar-topic--creators .radar-label { left: calc(-58px - 12.143cqw); }
+.hero .radar-topic--early .radar-label,
+.hero .radar-topic--creators .radar-label { top: calc(11px - 15.714cqw); }
+.hero .radar-topic--content .radar-label,
+.hero .radar-topic--social .radar-label { top: calc(11px + 15.714cqw); }
+.hero .radar-topic[aria-pressed="true"] { color: var(--primary); }
+.hero .radar-topic[aria-pressed="true"] .radar-label { font-weight: 600; }
+.hero .radar-topic[aria-pressed="true"] .radar-dot { opacity: 1; outline-color: var(--primary); }
+.hero .radar-topic:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+.hero .radar-topic:focus-visible .radar-label { text-decoration: underline; text-underline-offset: 4px; }
+.hero .radar-detail { height: 160px; padding-top: 20px; border-top: 1px solid var(--line); }
+.hero .radar-detail-copy { animation: radar-selection 180ms ease-out both; }
+.hero .radar-detail h3 { margin: 0 0 8px; font-family: var(--font-display); font-size: 22px; font-weight: 400; line-height: 1.25; color: var(--ink); }
+.hero .radar-detail p { margin: 0; font-size: 15.5px; line-height: 1.65; color: var(--ink); }
+.hero .radar-detail a { display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; font-size: 14px; line-height: 1.6; color: var(--primary); }
+.hero .radar-detail a:hover { text-decoration: underline; text-underline-offset: 4px; }
+@keyframes radar-reveal { from { opacity: 0; } to { opacity: 1; } }
+@keyframes radar-selection { from { opacity: .35; } to { opacity: 1; } }
+@media (max-width: 1000px) {
+  .hero .hero-radar { justify-self: start; }
+}
+@container hero-radar (max-width: 389px) {
+  .hero .radar-diagram { aspect-ratio: auto; }
+  .hero .radar-art { display: none; }
+  .hero .radar-points { position: static; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 10px; }
+  .hero .radar-topic { position: static; display: flex; align-items: center; gap: 8px; width: auto; height: auto; min-height: 48px; padding: 8px 10px; transform: none; border: 1px solid var(--line); border-radius: 6px; text-align: left; }
+  .hero .radar-topic[aria-pressed="true"] { border-color: var(--primary); }
+  .hero .radar-dot { position: static; flex-shrink: 0; width: 6px; height: 6px; transform: none; }
+  .hero .radar-topic .radar-label { position: static; width: auto; font-size: 13.5px; font-weight: 500; line-height: 1.4; white-space: normal; text-align: left; }
+  .hero .radar-detail { height: 180px; margin-top: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero .hero-radar,
+  .hero .radar-detail-copy { animation: none; }
+  .hero .radar-topic,
+  .hero .radar-label,
+  .hero .radar-dot { transition: none; }
+}
