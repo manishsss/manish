@@ -158,7 +158,6 @@ function CreatorNetwork(){
       </div>
       <figure className="creator-network-proof">
         <a href={network.roomUrl} target="_blank" rel="noopener noreferrer" aria-label="Open Creators Room on Telegram"><img src={screenshotFailed?network.screenshotFallback:network.screenshot} alt="Screenshot of the Creators Room community on Telegram" width="648" height="507" loading="eager" decoding="async" onError={()=>setScreenshotFailed(true)}/></a>
-        <figcaption>Creators Room on Telegram</figcaption>
       </figure>
     </div>
     <div className="creator-network-footer"><p>{network.note}</p></div>
