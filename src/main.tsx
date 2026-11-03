@@ -144,7 +144,9 @@ function Content(){
     {selected&&<ContentPreviewModal key={selected.id} item={selected} onClose={()=>setSelected(null)}/>}
   </section>
 }
-function CreatorNetwork(){return <section id="network" className="section container reveal">
+function CreatorNetwork(){
+  const [screenshotFailed,setScreenshotFailed]=useState(false);
+  return <section id="network" className="section container reveal">
   <div className="creator-network-heading"><h2>{network.title}</h2></div>
   <article className="creator-network-card" aria-label="Creators Room community">
     <div className="creator-network-body">
@@ -155,7 +157,7 @@ function CreatorNetwork(){return <section id="network" className="section contai
         <div className="creator-network-actions"><a className="button primary" href="#contact">Plan a creator campaign <Icon name="diagonal" size={16}/></a><a className="creator-network-join" href={network.roomUrl} target="_blank" rel="noopener noreferrer">Creator? Join Creators Room <span aria-hidden="true">↗</span></a></div>
       </div>
       <figure className="creator-network-proof">
-        <a href={network.roomUrl} target="_blank" rel="noopener noreferrer" aria-label="Open Creators Room on Telegram"><img src={network.screenshot} alt="Screenshot of the Creators Room community on Telegram" width="1080" height="845" loading="lazy" decoding="async"/></a>
+        <a href={network.roomUrl} target="_blank" rel="noopener noreferrer" aria-label="Open Creators Room on Telegram"><img src={screenshotFailed?network.screenshotFallback:network.screenshot} alt="Screenshot of the Creators Room community on Telegram" width="648" height="507" loading="eager" decoding="async" onError={()=>setScreenshotFailed(true)}/></a>
         <figcaption>Creators Room on Telegram</figcaption>
       </figure>
     </div>

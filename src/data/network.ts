@@ -7,5 +7,6 @@ export const network = {
   matchedBy:'GEO, niche, audience size, engagement, and rate.',
   note:'Creator details and campaign shortlists are shared privately based on campaign requirements.',
   roomUrl:'https://t.me/+iwRifoZG7HpjMjA1',
-  screenshot:'/network/creators-room.png'
+  screenshot:new URL('../assets/creators-room-preview.png',import.meta.url).href,
+  screenshotFallback:'/network/creators-room.png'
 };
