@@ -1,7 +1,7 @@
 export const profile = {
   name: 'Manish', role: 'Web3 Creator & KOL Manager', location: 'Based in India',
   headline: ['I find what’s early.', 'Create around it.', 'Bring creators together.'],
-  description: 'Web3 content, short-form videos, and KOL campaigns—from my own feed to your next launch.',
+  description: 'Creating content, growing socials and bringing creators together for Web3 brands.',
   avatar: '/avatar.jpg',
   headerAvatar: '/profile/header-avatar.png',
   contact: { x: 'https://x.com/web3manish', xHandle: '@web3manish', telegram: 'https://t.me/manishweb3', telegramHandle: '@manishweb3', telegramChannel: 'https://t.me/web3manish' },
