@@ -29,7 +29,7 @@ function Navbar(){return <header className="navbar"><div className="nav-inner">
   </nav>
 </div></header>}
 
-const heroRoles=['Web3 Creator','Social Media Strategist','Video Creator','KOL Manager','Vibecoder'];
+const heroRoles=['Web3 Creator','Social Media Strategist','Video Creator','KOL Manager','Vibecoder','Growth Manager'];
 function HeroRole(){
   const[role,setRole]=useState(0);
   useEffect(()=>{
