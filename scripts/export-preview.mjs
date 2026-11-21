@@ -16,9 +16,9 @@ const icon=await readFile('public/profile/header-avatar.png');
 js=js.replaceAll('/avatar.jpg',`data:image/jpeg;base64,${avatar.toString('base64')}`);
 for(const folder of ['content','brands','profile','network']){
   const previewFiles=await readdir(`public/${folder}`).catch(()=>[]);
-  for(const file of previewFiles.filter(name=>/\.(webp|png)$/.test(name))){
+  for(const file of previewFiles.filter(name=>/\.(webp|png|jpe?g)$/.test(name))){
     const media=await readFile(`public/${folder}/${file}`);
-    const mime=file.endsWith('.png')?'image/png':'image/webp';
+    const mime=file.endsWith('.png')?'image/png':file.endsWith('.webp')?'image/webp':'image/jpeg';
     js=js.replaceAll(`/${folder}/${file}`,`data:${mime};base64,${media.toString('base64')}`);
   }
 }

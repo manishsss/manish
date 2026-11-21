@@ -9,7 +9,7 @@ export interface ContentItem {
 }
 // Text, dates, article cover, video posters and media URLs fetched from X's public syndication data.
 // The Polymarket perps referral image is an owner-supplied replacement for the original post image.
-// No view or engagement counts are inferred. Local WebP files keep previews fast and reliable.
+// No view or engagement counts are inferred. Local image files keep previews fast and reliable.
 // Preview copy and ordering supplied by the owner in the reference screenshots.
 export const content:ContentItem[] = [
   {
@@ -65,6 +65,32 @@ export const content:ContentItem[] = [
     }
   },
   {
+    "id": "2123064261341773877",
+    "category": "Videos",
+    "title": "Bitget Wallet: gas fees in stablecoins",
+    "description": "A short-form walkthrough of Bitget Wallet’s stablecoin gas payments and Web3 features.",
+    "platform": "X",
+    "url": "https://x.com/Web3Manish/status/2123064261341773877",
+    "thumbnail": "/content/2123064261341773877-1.jpg",
+    "images": [
+      {
+        "src": "/content/2123064261341773877-1.jpg",
+        "width": 1200,
+        "height": 675,
+        "alt": "Video poster for Manish’s Bitget Wallet walkthrough"
+      }
+    ],
+    "videoUrl": "https://video.twimg.com/amplify_video/2123063923142434816/vid/avc1/1280x720/hE8dgXq4QSgxwfF8.mp4",
+    "caption": "stop buying ETH just to send USDT\n\n@BitgetWallet lets you pay gas in stables\n\n+ free transactions on multiple chains\n\nand it's not just a wallet\n\n> perps trading\n> onchain stocks\n> day-1 memes on every new chain\n> swap, send, p2p\n> bitget wallet card\n\neverything inside one app",
+    "publishedAt": "2026-11-18T14:42:19.000Z",
+    "views": null,
+    "engagement": null,
+    "preview": {
+      "title": "Bitget Wallet, explained.",
+      "order": 2
+    }
+  },
+  {
     "id": "2059133951969759537",
     "category": "Articles",
     "title": "How I Turn $100 Into Daily Income on Polymarket",
@@ -89,7 +115,7 @@ export const content:ContentItem[] = [
       "label": "03 / EDUCATIONAL CONTENT",
       "title": "Polymarket LP rewards",
       "excerpt": "2 weeks ago I had $100 on Polymarket and no idea what LP rewards were....",
-      "order": 4
+      "order": 5
     }
   },
   {
@@ -117,7 +143,7 @@ export const content:ContentItem[] = [
       "label": "01 / CAMPAIGN RESULTS",
       "title": "350+ users joined",
       "excerpt": "I posted about a project yesterday with \"paid partnership\" tag\nand 350+ users joined with my link",
-      "order": 2
+      "order": 3
     }
   },
   {
@@ -145,7 +171,7 @@ export const content:ContentItem[] = [
       "label": "02 / TRADING COMMUNITY",
       "title": "$200K+ volume",
       "excerpt": "> 25 users joined\n> $200K+ volume",
-      "order": 3
+      "order": 4
     }
   },
   {
@@ -179,7 +205,7 @@ export const content:ContentItem[] = [
       "label": "04 / CRYPTO CULTURE",
       "title": "Shitpost",
       "excerpt": "Pump fun paying $0.05 per comment\nFomo paying $0.15 per comment",
-      "order": 5
+      "order": 6
     }
   }
 ];
