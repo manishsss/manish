@@ -148,7 +148,7 @@ function ContentPreviewModal({item,onClose}:{item:ContentItem;onClose:()=>void})
   </Modal>
 }
 function Content(){
-  const[filter,setFilter]=useState<ContentCategory>('All');
+  const[filter,setFilter]=useState<ContentCategory>('Videos');
   const[selected,setSelected]=useState<ContentItem|null>(null);
   const shown=content.filter(c=>filter==='All'||c.category===filter).sort((a,b)=>a.preview.order-b.preview.order);
   return <section id="content" className="section container reveal">
