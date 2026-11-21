@@ -100,9 +100,23 @@ function Campaigns(){return <section id="campaigns" className="section container
 </section>}
 function Modal({title,onClose,children}:{title:string;onClose:()=>void;children:React.ReactNode}){const ref=useRef<HTMLDialogElement>(null);useEffect(()=>{const el=ref.current!;el.showModal();const prev=document.body.style.overflow;document.body.style.overflow='hidden';return()=>{document.body.style.overflow=prev}},[]);return <dialog ref={ref} className="modal" onCancel={onClose} aria-label={title} onClick={e=>{if(e.target===e.currentTarget)onClose()}}><div className="modal-inner"><div className="modal-heading"><span className="section-kicker">{title}</span><button className="close-button" aria-label="Close dialog" onClick={onClose}><Icon name="close"/></button></div>{children}</div></dialog>}
 const contentDate = (date:string) => new Intl.DateTimeFormat('en',{month:'short',day:'numeric',year:'numeric'}).format(new Date(date));
+function UGCReelCard({item}:{item:ContentItem}) {
+  return <article className="content-card content-card--live content-video-card content-ugc-card">
+    <a className="content-thumbnail content-thumbnail--real video" href={item.url} target="_blank" rel="noopener noreferrer" aria-label={`Watch ${item.title} on Instagram`}>
+      <div className="content-image-strip">
+        <img src={item.thumbnail} alt={item.images[0].alt} width="360" height="640" loading="lazy" decoding="async"/>
+      </div>
+    </a>
+    <div className="content-video-caption">
+      <h3>{item.preview.title}</h3>
+      <a className="content-x-link" href={item.url} target="_blank" rel="noopener noreferrer">WATCH ON INSTAGRAM <Icon name="diagonal" size={13}/></a>
+    </div>
+  </article>;
+}
 function ContentCard({item,onOpen}:{item:ContentItem;onOpen:()=>void}){
   const [imageFailed,setImageFailed]=useState(false);
   const preview=item.preview;
+  if(item.category==='UGC')return <UGCReelCard item={item}/>;
   if(item.category==='Videos')return <article className="content-card content-card--live content-video-card">
     <button className="content-thumbnail content-thumbnail--real video" onClick={onOpen} aria-label={`Watch video: ${preview.title}`}>
       {imageFailed?<div className="content-image-fallback"><Icon name="play" size={24}/><span>{preview.title}</span></div>:<div className="content-image-strip"><img src={item.thumbnail} alt={item.images[0].alt} width={item.images[0].width} height={item.images[0].height} loading="lazy" decoding="async" onError={()=>setImageFailed(true)}/></div>}
@@ -140,7 +154,7 @@ function Content(){
   return <section id="content" className="section container reveal">
     <SectionHeading title="CONTENT" subtitle="Videos, articles and posts from my side of Web3."><a className="text-button" href={profile.contact.x} target="_blank" rel="noreferrer">More on X <Icon name="diagonal" size={16}/></a></SectionHeading>
     <div className="content-tabs" role="tablist" aria-label="Content categories">{contentFilters.map(f=><button key={f} role="tab" aria-selected={f===filter} aria-controls="content-panel" id={`tab-${f.replaceAll(' ','-')}`} className={f===filter?'active':''} onClick={()=>setFilter(f)} onKeyDown={e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();const idx=contentFilters.indexOf(f);const next=contentFilters[(idx+(e.key==='ArrowRight'?1:contentFilters.length-1))%contentFilters.length];setFilter(next);document.getElementById(`tab-${next.replaceAll(' ','-')}`)?.focus()}}}>{f}<span className="content-tab-count">{f==='All'?content.length:content.filter(c=>c.category===f).length}</span></button>)}</div>
-    <div id="content-panel" role="tabpanel" aria-labelledby={`tab-${filter.replaceAll(' ','-')}`} className="content-grid">{shown.map(c=><ContentCard key={c.id} item={c} onOpen={()=>setSelected(c)}/>)}</div>
+    <div id="content-panel" role="tabpanel" aria-labelledby={`tab-${filter.replaceAll(' ','-')}`} className={`content-grid${filter==='UGC'?' content-grid--ugc':''}`}>{shown.map(c=><ContentCard key={c.id} item={c} onOpen={()=>setSelected(c)}/>)}</div>
     {selected&&<ContentPreviewModal key={selected.id} item={selected} onClose={()=>setSelected(null)}/>}
   </section>
 }
@@ -190,7 +204,7 @@ function About(){return <section className="section container about-section reve
   </div>
 </section>}
 function Contact(){return <section id="contact" className="section container contact-section reveal"><div className="contact-panel"><div className="contact-copy"><div className="section-kicker">THE NEXT GOOD THING STARTS HERE</div><h2>Have something<br/>worth talking about?</h2><p>A project, a campaign, or an early idea.<br/>Let’s make a connection.</p></div><div className="contact-actions"><a className="button contact-telegram" href={profile.contact.telegram} target="_blank" rel="noopener noreferrer">Let’s talk</a><a className="button contact-x" href={profile.contact.x} target="_blank" rel="noopener noreferrer">Find me on X <Icon name="diagonal" size={16}/></a></div></div></section>}
-function Footer(){return <footer className="container"><div className="footer-top"><div><a className="wordmark" href="#home">MANISH</a></div><div><a href={profile.contact.x} target="_blank" rel="noreferrer">X <Icon name="diagonal" size={13}/></a><a href={profile.contact.telegram} target="_blank" rel="noreferrer">Telegram <Icon name="diagonal" size={13}/></a></div></div></footer>}
+function Footer(){return <footer className="container"><div className="footer-top"><div><a className="wordmark" href="#home">MANISH</a></div><div><a href={profile.contact.x} target="_blank" rel="noreferrer">X <Icon name="diagonal" size={13}/></a><a href={profile.contact.telegram} target="_blank" rel="noreferrer">Telegram <Icon name="diagonal" size={13}/></a><a href={profile.contact.instagram} target="_blank" rel="noopener noreferrer">Instagram <Icon name="diagonal" size={13}/></a></div></div></footer>}
 function usePortfolioMotion(){
   useEffect(()=>{
     const preference=window.matchMedia('(prefers-reduced-motion: reduce)');

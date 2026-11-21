@@ -1,4 +1,4 @@
-export const contentFilters = ['All','Videos','Articles','X Posts'] as const;
+export const contentFilters = ['All','Videos','UGC','Articles','X Posts'] as const;
 export type ContentCategory = typeof contentFilters[number];
 export interface ContentImage {src:string;alt:string;width:number;height:number}
 export interface ContentItem {
@@ -7,7 +7,7 @@ export interface ContentItem {
   url:string; thumbnail:string; images:ContentImage[]; videoUrl:string|null;
   caption:string; publishedAt:string; views:string|null; engagement:string|null;
 }
-// Text, dates, article cover, video posters and media URLs fetched from X's public syndication data.
+// X content uses public syndication data. UGC previews use public Instagram reel metadata.
 // The Polymarket perps referral image is an owner-supplied replacement for the original post image.
 // No view or engagement counts are inferred. Local image files keep previews fast and reliable.
 // Preview copy and ordering supplied by the owner in the reference screenshots.
@@ -206,6 +206,84 @@ export const content:ContentItem[] = [
       "title": "Shitpost",
       "excerpt": "Pump fun paying $0.05 per comment\nFomo paying $0.15 per comment",
       "order": 6
+    }
+  },
+  {
+    "id": "instagram-DfzdUxuSQJ9",
+    "category": "UGC",
+    "title": "Copying millionaires",
+    "description": "An Instagram reel about copy trading.",
+    "platform": "Instagram",
+    "url": "https://www.instagram.com/reel/DfzdUxuSQJ9/",
+    "thumbnail": "/content/instagram-DfzdUxuSQJ9.jpg",
+    "images": [
+      {
+        "src": "/content/instagram-DfzdUxuSQJ9.jpg",
+        "width": 360,
+        "height": 640,
+        "alt": "Instagram reel preview for Copying millionaires"
+      }
+    ],
+    "videoUrl": null,
+    "caption": "Copy millionaires = $$$$ \n\nComment “app” to get the link.\n\n[side hustle, money, ai, finance, trading]\n\n#fomo",
+    "publishedAt": "2026-11-16",
+    "views": null,
+    "engagement": null,
+    "preview": {
+      "title": "Copying millionaires",
+      "order": 7
+    }
+  },
+  {
+    "id": "instagram-DfpJenJSm7j",
+    "category": "UGC",
+    "title": "Copy trading",
+    "description": "A short-form Instagram video about copy trading.",
+    "platform": "Instagram",
+    "url": "https://www.instagram.com/reel/DfpJenJSm7j/",
+    "thumbnail": "/content/instagram-DfpJenJSm7j.jpg",
+    "images": [
+      {
+        "src": "/content/instagram-DfpJenJSm7j.jpg",
+        "width": 360,
+        "height": 640,
+        "alt": "Instagram reel preview for Copy trading"
+      }
+    ],
+    "videoUrl": null,
+    "caption": "Comment TRADE and i will send you the link.\n\n[side hustle, ai, money, investing, finance]\n\n#fomo",
+    "publishedAt": "2026-11-12",
+    "views": null,
+    "engagement": null,
+    "preview": {
+      "title": "Copy trading",
+      "order": 8
+    }
+  },
+  {
+    "id": "instagram-Df17JrKy8ug",
+    "category": "UGC",
+    "title": "Trying side hustles",
+    "description": "Day 7 of trying random side hustles.",
+    "platform": "Instagram",
+    "url": "https://www.instagram.com/reel/Df17JrKy8ug/",
+    "thumbnail": "/content/instagram-Df17JrKy8ug.jpg",
+    "images": [
+      {
+        "src": "/content/instagram-Df17JrKy8ug.jpg",
+        "width": 360,
+        "height": 640,
+        "alt": "Instagram reel preview for Trying side hustles"
+      }
+    ],
+    "videoUrl": null,
+    "caption": "Day 7 of trying random side hustles \n\n[side hustles, money, ai, finance, trading]\n\n#fomo",
+    "publishedAt": "2026-11-17",
+    "views": null,
+    "engagement": null,
+    "preview": {
+      "title": "Trying side hustles",
+      "order": 9
     }
   }
 ];

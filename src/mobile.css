@@ -29,8 +29,8 @@
   #content .section-heading p{max-width:none;font-size:16px;line-height:1.65}
   #content .section-heading>.text-button{margin-top:0;min-height:44px;font-size:14px;padding-block:10px}
   #content .section-heading h2,#projects .brands-block>h2,#campaigns .campaign-heading h2,#network .creator-network-heading h2,#about .about-section-heading h2{font-size:clamp(32px,8.5vw,40px);line-height:1.16;letter-spacing:-.7px;overflow-wrap:break-word}
-  #content .content-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
-  #content .content-tabs button,#content .content-tabs button.active{min-width:0;min-height:44px;justify-content:center;gap:4px;padding:10px 4px;font-size:12px;line-height:1.2;letter-spacing:0}
+  #content .content-tabs{display:flex;flex-wrap:wrap;gap:6px}
+  #content .content-tabs button,#content .content-tabs button.active{flex:1 1 calc((100% - 12px)/3);min-width:0;min-height:44px;justify-content:center;gap:4px;padding:10px 4px;font-size:12px;line-height:1.2;letter-spacing:0}
   #content .content-tab-count{font-size:10px}
   #content .content-grid{grid-template-columns:minmax(0,1fr);gap:20px}
   #content .content-video-caption{gap:10px;padding-block:8px;align-items:center}
@@ -102,4 +102,14 @@
   .navbar .nav-links{gap:1px}
   .navbar .nav-links a{font-size:12px;padding-inline:4px}
   .navbar .nav-links .nav-talk{font-size:12px;padding-inline:7px}
+}
+
+.footer-top > div:last-child {
+  flex-wrap: wrap;
+}
+@media(max-width: 540px) {
+  .footer-top {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
 }

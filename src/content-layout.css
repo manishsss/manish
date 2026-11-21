@@ -41,3 +41,36 @@
   #content .content-video-caption{align-items:center}
 }
 @media(prefers-reduced-motion:reduce){#content .content-x-link svg,#content .content-image-preview{transition:none}}
+
+/* Portrait Instagram reel previews. */
+#content .content-grid--ugc {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+#content .content-ugc-card {
+  width: 100%;
+  max-width: 320px;
+  min-width: 0;
+  justify-self: center;
+}
+#content .content-ugc-card .content-thumbnail--real {
+  display: block;
+  aspect-ratio: 9 / 16;
+}
+#content .content-ugc-card .content-video-caption {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 6px;
+}
+#content .content-ugc-card .content-video-caption h3 {
+  font-size: 16px;
+  font-weight: 500;
+}
+#content .content-ugc-card a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+@media(max-width: 900px) {
+  #content .content-grid--ugc {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
