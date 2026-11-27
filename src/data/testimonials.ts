@@ -9,6 +9,8 @@ export const brands:Brand[] = [
     {label:'Arc token discovery',url:'https://x.com/Web3Manish/status/2100503335430471703'},
     {label:'Trading Arc tokens',url:'https://x.com/Web3Manish/status/2101607679571742982'},
     {label:'Swap n Earn rewards',url:'https://x.com/Web3Manish/status/2113291742950965317'},
+    {label:'Stablecoin gas payments (video)',url:'https://x.com/Web3Manish/status/2123064261341773877'},
+    {label:'Tokenized stock challenge (video)',url:'https://x.com/Web3Manish/status/2125844324026052774'},
   ]},
   {name:'Maestro Bot',logo:'/brands/maestro-bot.png',posts:[
     {label:'Bridging and trading on Arc',url:'https://x.com/Web3Manish/status/2100060526932001242'},
