@@ -119,7 +119,7 @@ function ContentCard({item,onOpen}:{item:ContentItem;onOpen:()=>void}){
   if(item.category==='UGC')return <UGCReelCard item={item}/>;
   if(item.category==='Videos')return <article className="content-card content-card--live content-video-card">
     <button className="content-thumbnail content-thumbnail--real video" onClick={onOpen} aria-label={`Watch video: ${preview.title}`}>
-      {imageFailed?<div className="content-image-fallback"><Icon name="play" size={24}/><span>{preview.title}</span></div>:<div className="content-image-strip"><img src={item.thumbnail} alt={item.images[0].alt} width={item.images[0].width} height={item.images[0].height} loading="lazy" decoding="async" onError={()=>setImageFailed(true)}/></div>}
+      {imageFailed?<div className="content-image-fallback"><Icon name="play" size={24}/><span>{preview.title}</span></div>:<div className="content-image-strip"><img className={item.images[0].height>item.images[0].width?'content-video-portrait':undefined} src={item.thumbnail} alt={item.images[0].alt} width={item.images[0].width} height={item.images[0].height} loading="lazy" decoding="async" onError={()=>setImageFailed(true)}/></div>}
       <span className="content-video-play"><Icon name="play" size={18}/></span>
     </button>
     <div className="content-video-caption"><h3>{preview.title}</h3><a className="content-x-link" href={item.url} target="_blank" rel="noopener noreferrer" aria-label={`Watch ${preview.title} on X`}>WATCH ON X <Icon name="diagonal" size={13}/></a></div>

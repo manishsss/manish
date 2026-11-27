@@ -91,6 +91,32 @@ export const content:ContentItem[] = [
     }
   },
   {
+    "id": "2125844324026052774",
+    "category": "Videos",
+    "title": "Bitget Wallet’s tokenized stock challenge",
+    "description": "An explainer on Bitget Wallet’s India-only tokenized US stock trading challenge on Arbitrum.",
+    "platform": "X",
+    "url": "https://x.com/Web3Manish/status/2125844324026052774",
+    "thumbnail": "/content/2125844324026052774-1.jpg",
+    "images": [
+      {
+        "src": "/content/2125844324026052774-1.jpg",
+        "width": 675,
+        "height": 1200,
+        "alt": "Video poster for Manish’s Bitget Wallet tokenized stock challenge explainer"
+      }
+    ],
+    "videoUrl": "https://video.twimg.com/amplify_video/2125843889722662912/vid/avc1/720x1280/hhuZW-tyFzg9JRWK.mp4",
+    "caption": "my bank account is Indian\n\nbut my portfolio wants to be American :D\n\n@BitgetWallet is running an India only trading challenge on Arbitrum \n\n> trade $20+ worth of tokenized US stocks \n> Nov 26 to Dec 2\n> $300 pool (30 winners get $10 each)\n\nplus a bigger $100k RWA rewards campaign",
+    "publishedAt": "2026-11-26T06:49:17.000Z",
+    "views": null,
+    "engagement": null,
+    "preview": {
+      "title": "Tokenized stocks on Arbitrum.",
+      "order": 3
+    }
+  },
+  {
     "id": "2059133951969759537",
     "category": "Articles",
     "title": "How I Turn $100 Into Daily Income on Polymarket",
@@ -115,7 +141,7 @@ export const content:ContentItem[] = [
       "label": "03 / EDUCATIONAL CONTENT",
       "title": "Polymarket LP rewards",
       "excerpt": "2 weeks ago I had $100 on Polymarket and no idea what LP rewards were....",
-      "order": 5
+      "order": 6
     }
   },
   {
@@ -143,7 +169,7 @@ export const content:ContentItem[] = [
       "label": "01 / CAMPAIGN RESULTS",
       "title": "350+ users joined",
       "excerpt": "I posted about a project yesterday with \"paid partnership\" tag\nand 350+ users joined with my link",
-      "order": 3
+      "order": 4
     }
   },
   {
@@ -171,7 +197,7 @@ export const content:ContentItem[] = [
       "label": "02 / TRADING COMMUNITY",
       "title": "$200K+ volume",
       "excerpt": "> 25 users joined\n> $200K+ volume",
-      "order": 4
+      "order": 5
     }
   },
   {
@@ -205,7 +231,7 @@ export const content:ContentItem[] = [
       "label": "04 / CRYPTO CULTURE",
       "title": "Shitpost",
       "excerpt": "Pump fun paying $0.05 per comment\nFomo paying $0.15 per comment",
-      "order": 6
+      "order": 7
     }
   },
   {
@@ -231,7 +257,7 @@ export const content:ContentItem[] = [
     "engagement": null,
     "preview": {
       "title": "Copying millionaires",
-      "order": 7
+      "order": 8
     }
   },
   {
@@ -257,7 +283,7 @@ export const content:ContentItem[] = [
     "engagement": null,
     "preview": {
       "title": "Copy trading",
-      "order": 8
+      "order": 9
     }
   },
   {
@@ -283,7 +309,7 @@ export const content:ContentItem[] = [
     "engagement": null,
     "preview": {
       "title": "Trying side hustles",
-      "order": 9
+      "order": 10
     }
   }
 ];
