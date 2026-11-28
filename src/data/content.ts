@@ -117,6 +117,32 @@ export const content:ContentItem[] = [
     }
   },
   {
+    "id": "2126542272321990682",
+    "category": "Videos",
+    "title": "Entropy: trading everyday companies",
+    "description": "An explainer on trading familiar companies around the clock with Entropy.",
+    "platform": "X",
+    "url": "https://x.com/Web3Manish/status/2126542272321990682",
+    "thumbnail": "/content/2126542272321990682-1.jpg",
+    "images": [
+      {
+        "src": "/content/2126542272321990682-1.jpg",
+        "width": 675,
+        "height": 1200,
+        "alt": "Video poster for Manish’s Entropy trading explainer"
+      }
+    ],
+    "videoUrl": "https://video.twimg.com/amplify_video/2126537874292330496/vid/avc1/720x1280/okw_s2BemXlikqR6.mp4",
+    "caption": "my screen time is finally useful\n\n@entropyIO lets you trade the companies you already use every day\n\n> chatgpt (openai isn't even listed yet, still tradable)\n> nvidia, apple, netflix too\n> any day, any hour, even weekends\n\nwhich one would you pick?",
+    "publishedAt": "2026-11-28T05:02:41.000Z",
+    "views": null,
+    "engagement": null,
+    "preview": {
+      "title": "Trading everyday companies.",
+      "order": 4
+    }
+  },
+  {
     "id": "2059133951969759537",
     "category": "Articles",
     "title": "How I Turn $100 Into Daily Income on Polymarket",
@@ -141,7 +167,7 @@ export const content:ContentItem[] = [
       "label": "03 / EDUCATIONAL CONTENT",
       "title": "Polymarket LP rewards",
       "excerpt": "2 weeks ago I had $100 on Polymarket and no idea what LP rewards were....",
-      "order": 6
+      "order": 7
     }
   },
   {
@@ -169,7 +195,7 @@ export const content:ContentItem[] = [
       "label": "01 / CAMPAIGN RESULTS",
       "title": "350+ users joined",
       "excerpt": "I posted about a project yesterday with \"paid partnership\" tag\nand 350+ users joined with my link",
-      "order": 4
+      "order": 5
     }
   },
   {
@@ -197,7 +223,7 @@ export const content:ContentItem[] = [
       "label": "02 / TRADING COMMUNITY",
       "title": "$200K+ volume",
       "excerpt": "> 25 users joined\n> $200K+ volume",
-      "order": 5
+      "order": 6
     }
   },
   {
@@ -231,7 +257,7 @@ export const content:ContentItem[] = [
       "label": "04 / CRYPTO CULTURE",
       "title": "Shitpost",
       "excerpt": "Pump fun paying $0.05 per comment\nFomo paying $0.15 per comment",
-      "order": 7
+      "order": 8
     }
   },
   {
@@ -257,7 +283,7 @@ export const content:ContentItem[] = [
     "engagement": null,
     "preview": {
       "title": "Copying millionaires",
-      "order": 8
+      "order": 9
     }
   },
   {
@@ -283,7 +309,7 @@ export const content:ContentItem[] = [
     "engagement": null,
     "preview": {
       "title": "Copy trading",
-      "order": 9
+      "order": 10
     }
   },
   {
@@ -309,7 +335,7 @@ export const content:ContentItem[] = [
     "engagement": null,
     "preview": {
       "title": "Trying side hustles",
-      "order": 10
+      "order": 11
     }
   }
 ];
